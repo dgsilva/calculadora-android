@@ -86,4 +86,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
+    public void divisao(View view){
+        EditText n1 = (EditText) findViewById(R.id.txtN1);
+        EditText n2 = (EditText) findViewById(R.id.txtN2);
+        String v1 = n1.getText().toString();
+        String v2 = n2.getText().toString();
+        if((v1.trim().isEmpty())||(v2.trim().isEmpty())){
+            AlertDialog.Builder dlg =  new AlertDialog.Builder(this);
+            dlg.setMessage("Há dados em Branco");
+            dlg.setNeutralButton("Ok",null);
+            dlg.show();
+        }else {
+            double num1 = Double.parseDouble(n1.getText().toString());
+            double num2 = Double.parseDouble(n2.getText().toString());
+            double div = (num1/num2);
+            AlertDialog.Builder dlg =  new AlertDialog.Builder(this);
+            dlg.setMessage("O resultado da subtração foi: " + div);
+            dlg.setNeutralButton("Ok", null);
+            dlg.show();
+        }5
+
+    }
 }
